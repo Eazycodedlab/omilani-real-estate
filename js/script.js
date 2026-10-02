@@ -1,1 +1,3 @@
-const nav=document.querySelector('.nav');const menu=document.querySelector('.menu');menu.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');
+menuBtn?.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false')}));
